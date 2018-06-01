@@ -10,13 +10,7 @@ from . import views
 admin.site.site_title = 'Edge_Demo Site Admin'
 admin.site.site_header = 'Edge_Demo Administration'
 
-urlpatterns = [
-    path('', views.HomePage.as_view(), name='home'),
-    path('about/', views.AboutPage.as_view(), name='about'),
-    path('users/', include(profiles.urls)),
-    path('admin/', admin.site.urls),
-    path('', include(accounts.urls)),
-]
+
 
 # User-uploaded files like profile pics need to be served in development
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
